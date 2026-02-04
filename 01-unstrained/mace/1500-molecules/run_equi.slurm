@@ -13,7 +13,6 @@
 module load PrgEnv-gnu
 module load cray-python
 export SLURM_CPU_FREQ_REQ=2250000
-source ../../../00-common/software/venv/bin/activate
 LMP_EXE=../../../../00-common/software/lammps/lmp
 
 rm -rf run_equi
