@@ -1,0 +1,65 @@
+---------
+ General
+---------
+
+Collated from = 10 [files]
+
+Droplet roof, mean of block means = 29.97318861116559 [A]
+Droplet roof, uncertainty = 0.059768885072535076 [A]
+
+Droplet floor, mean of block means = 1.9170999158328208 [A]
+Droplet floor, uncertainty = 0.002311378388570757 [A]
+
+Graphene sheet z at origin, mean of block means = 0.0 [A]
+Graphene sheet z at origin, uncertainty = 0.0 [A]
+
+Droplet height, mean of block means = 28.05919130040336 [A]
+Droplet height, uncertainty = 0.09063819096665228 [A]
+
+Nominal interfacial separation, mean of block means = 1.9165672346418172 [A]
+Nominal interfacial separation, uncertainty = 0.0033466201197876935 [A]
+
+---------------------------------------------
+ Block-averaging of instantaneous interfaces
+---------------------------------------------
+
+Contact angle correlation time, mean of block means = 15.808590146342198 [frames]
+Contact angle correlation time, uncertainty = 0.18934382256224128 [frames]
+
+Contact angle azimuthal correlation scale, mean of block means = 12.633323994160957 [deg]
+Contact angle azimuthal correlation scale, uncertainty = 1.3250304306324776 [deg]
+
+Out-of-plane angle correlation time, mean of block means = 16.214746476247328 [frames]
+Out-of-plane angle correlation time, uncertainty = 0.14059634709989915 [frames]
+
+Out-of-plane angle azimuthal correlation scale, mean of block means = 5.828550343856209 [deg]
+Out-of-plane angle azimuthal correlation scale, uncertainty = 0.07561471362443709 [deg]
+
+---------------------------------------------
+ Block-averaging of time-averaged interfaces
+---------------------------------------------
+
+Number of blocks = 10
+
+Contact angle, mean of block means = 78.05882917474355 [deg]
+Contact angle, uncertainty = 0.20848592486254539 [deg]
+
+Foot edge radius, mean of block means = 32.82238330333752 [A]
+Foot edge radius, uncertainty = 0.06898873673216024 [A]
+
+Best-fit sphere contact angle, mean of block means = 84.1016832984758 [deg]
+Best-fit sphere contact angle, uncertainty = 0.42274664315991123 [deg]
+
+Best-fit sphere edge radius, mean of block means = 33.17491305744546 [A]
+Best-fit sphere edge radius, uncertainty = 0.1393425991092929 [A]
+
+--------------------------------------------
+ Block-averaging of Gibbs dividing surfaces
+--------------------------------------------
+
+Best-fit Gibbs contact angle, mean of block means = 84.78094141684235 [deg]
+Best-fit Gibbs contact angle, uncertainty = 0.33184524482995736 [deg]
+
+Best-fit Gibbs edge radius, mean of block means = 32.99928955066389 [A]
+Best-fit Gibbs edge radius, uncertainty = 0.096056623757835 [A]
+

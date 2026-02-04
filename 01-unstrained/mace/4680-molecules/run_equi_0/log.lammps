@@ -1,0 +1,156 @@
+LAMMPS (4 Feb 2025)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:99)
+  using 1 OpenMP thread(s) per MPI task
+# LAMMPS script for running NVT simulation
+
+units       metal
+dimension   3
+boundary    p p p
+atom_style  full
+atom_modify map yes
+
+newton      on
+
+read_data   ../start.lammps-data
+Reading data file ...
+  orthogonal box = (0 0 0) to (154.008 148.2 151.07609)
+  16 by 8 by 12 MPI processor grid
+  reading atoms ...
+  22680 atoms
+  reading velocities ...
+  22680 velocities
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0        0        0       
+  special bond factors coul:  0        0        0       
+     0 = max # of 1-2 neighbors
+     0 = max # of 1-3 neighbors
+     0 = max # of 1-4 neighbors
+     1 = max # of special neighbors
+  special bonds CPU = 5.603 seconds
+  read_data CPU = 6.038 seconds
+
+pair_style  symmetrix/mace
+pair_coeff  * * ../../../../00-common/models/ch2o-dens-inv_swa-1-6-8.json C H O
+Loading MACE model from '../../../../00-common/models/ch2o-dens-inv_swa-1-6-8.json' ... success
+  mapping LAMMPS type 1 (C) to MACE type 1
+  mapping LAMMPS type 2 (H) to MACE type 0
+  mapping LAMMPS type 3 (O) to MACE type 2
+
+variable t equal step
+
+group graphene type 1
+8640 atoms in group graphene
+group H2O type 2 3
+14040 atoms in group H2O
+
+thermo 1000
+
+######### NVT equilibration for 50 ps #############
+
+dump DUMP1 all atom 100 nvt_equi.lammpstrj
+timestep 0.001
+fix NVT1 graphene nvt temp 300 300 0.1
+fix NVT2 H2O nvt temp 300 300 0.1
+run 50000
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 8
+  ghost atom cutoff = 8
+  binsize = 4, bins = 39 38 38
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair symmetrix/mace, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 5.965 | 6.253 | 8.153 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   297.00344     -3538106.3      0             -3537235.6      110.57192    
+      1000   298.83133     -3538173.3      0             -3537297.3      88.439484    
+      2000   306.0814      -3538210.2      0             -3537312.9      34.272053    
+      3000   308.90514     -3538223.1      0             -3537317.6      16.366811    
+      4000   300.61726     -3538208.9      0             -3537327.6     -2.7695424    
+      5000   293.92569     -3538212        0             -3537350.3     -59.626845    
+      6000   300.45774     -3538209.6      0             -3537328.8     -75.480951    
+      7000   302.28464     -3538213.9      0             -3537327.8     -168.16399    
+      8000   297.71426     -3538205.3      0             -3537332.6     -105.44353    
+      9000   300.66125     -3538215.5      0             -3537334.1     -99.236027    
+     10000   301.90854     -3538227.3      0             -3537342.3     -21.844632    
+     11000   302.65611     -3538213.3      0             -3537326.1     -99.617922    
+     12000   297.44834     -3538215        0             -3537343.1     -138.80365    
+     13000   299.86129     -3538209.5      0             -3537330.4     -141.44027    
+     14000   299.37791     -3538205.9      0             -3537328.3     -137.82001    
+     15000   302.3161      -3538208.3      0             -3537322       -98.091029    
+     16000   299.71233     -3538219.6      0             -3537341       -91.406347    
+     17000   300.43579     -3538212.4      0             -3537331.6     -48.347766    
+     18000   299.82065     -3538212.4      0             -3537333.5     -69.55479     
+     19000   300.73353     -3538209.1      0             -3537327.5     -23.300917    
+     20000   299.46614     -3538224        0             -3537346.2     -76.302876    
+     21000   303.24065     -3538222.8      0             -3537333.9     -76.716785    
+     22000   298.73917     -3538220.1      0             -3537344.4     -55.005824    
+     23000   299.83835     -3538206.3      0             -3537327.3     -18.788522    
+     24000   302.99842     -3538217.1      0             -3537328.8      10.755767    
+     25000   300.4372      -3538209.3      0             -3537328.6      3.6385869    
+     26000   299.53519     -3538218.3      0             -3537340.2     -11.311818    
+     27000   300.50984     -3538223.7      0             -3537342.7     -16.570503    
+     28000   301.0828      -3538213.9      0             -3537331.3     -33.813991    
+     29000   302.63976     -3538213.2      0             -3537326       -21.423729    
+     30000   296.69207     -3538205.6      0             -3537335.9     -36.533279    
+     31000   298.11283     -3538216.1      0             -3537342.2     -83.15439     
+     32000   300.06905     -3538205.5      0             -3537325.8     -94.756008    
+     33000   301.62502     -3538210.9      0             -3537326.7     -45.590365    
+     34000   296.8948      -3538214.3      0             -3537343.9     -61.258074    
+     35000   300.74682     -3538219        0             -3537337.4     -109.64909    
+     36000   300.92258     -3538221.3      0             -3537339.2     -56.252965    
+     37000   301.25171     -3538218.8      0             -3537335.7     -103.07929    
+     38000   295.11404     -3538214.7      0             -3537349.6     -137.5338     
+     39000   299.86754     -3538210.3      0             -3537331.2     -126.34553    
+     40000   302.59191     -3538215.5      0             -3537328.5     -73.971405    
+     41000   299.3664      -3538215.7      0             -3537338.1     -4.3685977    
+     42000   302.12738     -3538205.6      0             -3537319.9     -45.585954    
+     43000   299.84038     -3538218.9      0             -3537339.9     -58.808896    
+     44000   301.08791     -3538218.7      0             -3537336.1     -25.077979    
+     45000   302.21793     -3538207.3      0             -3537321.4     -24.244912    
+     46000   300.9906      -3538212        0             -3537329.6     -46.395254    
+     47000   298.66331     -3538221.5      0             -3537346        3.3056573    
+     48000   299.45636     -3538206.3      0             -3537328.4     -2.0367371    
+     49000   300.80027     -3538203.8      0             -3537322       -73.110753    
+     50000   300.97476     -3538224.2      0             -3537341.9     -53.566142    
+Loop time of 48298.2 on 1536 procs for 50000 steps with 22680 atoms
+
+Performance: 0.089 ns/day, 268.324 hours/ns, 1.035 timesteps/s, 23.479 katom-step/s
+100.0% CPU use with 1536 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.29668    | 6665.5     | 46841      |16042.0 | 13.80
+Bond    | 0.0031996  | 0.0084383  | 0.085844   |  11.8 |  0.00
+Neigh   | 0.034138   | 0.3341     | 5.6355     | 146.6 |  0.00
+Comm    | 1.351      | 1998.9     | 22051      |9541.8 |  4.14
+Output  | 7.2173     | 11.963     | 16.803     |  84.1 |  0.02
+Modify  | 426.61     | 39611      | 48274      |8198.2 | 82.01
+Other   |            | 10.41      |            |       |  0.02
+
+Nlocal:        14.7656 ave         237 max           0 min
+Histogram: 1318 25 104 22 7 6 9 4 10 31
+Nghost:          143.4 ave        2031 max           0 min
+Histogram: 1207 157 48 24 35 21 7 12 7 18
+Neighs:              0 ave           0 max           0 min
+Histogram: 1536 0 0 0 0 0 0 0 0 0
+FullNghs:      2255.87 ave       50235 max           0 min
+Histogram: 1357 86 28 7 8 7 3 9 11 20
+
+Total # of neighbors = 3465018
+Ave neighs/atom = 152.77857
+Ave special neighs/atom = 0
+Neighbor list builds = 2659
+Dangerous builds = 0
+
+write_restart nvt_equi.restart.*
+System init for write_restart ...
+write_data nvt_equi_final.lammps-data
+System init for write_data ...
+
+Total wall time: 13:25:33
