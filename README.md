@@ -19,5 +19,5 @@ by Darren Wayne Lim, Xavier R. Advincula, William C. Witt, Fabian L. Thiemann, a
 
 - `04-plots`: Graphical plots for the paper.
 
-Note that the simulations are designed to run on [ARCHER2](https://www.archer2.ac.uk/) using [LAMMPS](https://www.lammps.org/) patched by [symmetrix](https://github.com/wcwitt/symmetrix). Trajectories, and certain other raw data files, have been omitted from the repository due to large filesizes, but can be recreated using the settings provided.
+Note that the simulations are designed to run on [ARCHER2](https://www.archer2.ac.uk/) using [LAMMPS](https://www.lammps.org/) patched by [symmetrix](https://github.com/wcwitt/symmetrix). Simulation trajectories have been omitted from the repository due to large filesizes; only processed and analyzed data is present within the repository. All data presented in the paper is reproducible from the saved processed data.
 
