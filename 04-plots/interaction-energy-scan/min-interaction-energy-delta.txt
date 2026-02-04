@@ -1,0 +1,48 @@
+-------------------
+0-leg configuration
+-------------------
+
+DFT calculation (CP2K, revPBE-D3):
+  - 0.0% strain, D = 88.7 ± 1.0 meV
+  - 1.0% strain, D = 85.0 ± 1.0 meV
+  - 2.0% strain, D = 81.8 ± 1.0 meV
+  Relative change is -7.8%
+
+MACE model:
+  - 0.0% strain, D = 146.6 ± 5.9 meV
+  - 1.0% strain, D = 146.6 ± 5.6 meV
+  - 2.0% strain, D = 146.4 ± 5.7 meV
+  Relative change is -0.1%
+
+-------------------
+1-leg configuration
+-------------------
+
+DFT calculation (CP2K, revPBE-D3):
+  - 0.0% strain, D = 148.7 ± 7.0 meV
+  - 1.0% strain, D = 145.0 ± 6.5 meV
+  - 2.0% strain, D = 141.6 ± 6.1 meV
+  Relative change is -4.8%
+
+MACE model:
+  - 0.0% strain, D = 180.5 ± 9.6 meV
+  - 1.0% strain, D = 178.8 ± 8.7 meV
+  - 2.0% strain, D = 175.6 ± 8.1 meV
+  Relative change is -2.7%
+
+-------------------
+2-leg configuration
+-------------------
+
+DFT calculation (CP2K, revPBE-D3):
+  - 0.0% strain, D = 168.0 ± 18.4 meV
+  - 1.0% strain, D = 165.3 ± 18.1 meV
+  - 2.0% strain, D = 159.2 ± 18.9 meV
+  Relative change is -5.3%
+
+MACE model:
+  - 0.0% strain, D = 168.7 ± 19.7 meV
+  - 1.0% strain, D = 158.3 ± 17.4 meV
+  - 2.0% strain, D = 147.1 ± 15.5 meV
+  Relative change is -12.8%
+

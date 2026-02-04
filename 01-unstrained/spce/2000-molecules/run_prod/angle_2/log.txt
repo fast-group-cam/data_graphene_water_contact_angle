@@ -1,0 +1,58 @@
+-------------------------
+ General
+-------------------------
+
+No. of frames = 20001
+No. of water molecules = 2000
+
+Droplet roof = 29.740730372822412 [A]
+Droplet floor = 1.9044570081247105 [A]
+Graphene sheet z at origin = 0.0 [A]
+
+Droplet height = 27.836273364697703 [A]
+Nominal interfacial separation = 1.9044570081247105 [A]
+
+-------------------------
+ Instantaneous interface
+-------------------------
+
+Mean contact angle = 78.53476591342512 [deg]
+Median contact angle = 78.56285502400209 [deg]
+Contact angle stdev = 14.22664074857565 [deg]
+
+Contact angle correlation time = 15.665723605762995 [frames]
+Contact angle azimuthal correlation scale = 11.807377271558465 [deg]
+
+Mean out-of-plane angle = -0.007508881390235811 [deg]
+Median out-of-plane angle = -0.05513296292355873 [deg]
+Out-of-plane angle stdev = 15.950756042594653 [deg]
+
+Out-of-plane angle correlation time = 16.238978616459264 [frames]
+Out-of-plane angle azimuthal correlation scale = 6.128074272703172 [deg]
+
+-------------------------
+ Time-averaged interface
+-------------------------
+
+Mean contact angle = 77.51642599411848 [deg]
+Median contact angle = 77.30934493455857 [deg]
+Contact angle stdev = 1.0289926147342037 [deg]
+
+Mean out-of-plane angle = -1.1526553427965159e-05 [deg]
+Median out-of-plane angle = 0.08446310573714784 [deg]
+Out-of-plane angle stdev = 1.3230086892748323 [deg]
+
+Center-of-mass z-height = 12.280170111649396 [A]
+Best-fit interfacial circular radius = 32.9713654814562 [A]
+
+Best-fit sphere z-height = -4.161943209149687 [A]
+Best-fit sphere radius = 33.858721183948965 [A]
+Best-fit sphere contact angle = 82.93929598826837 [deg]
+Best-fit sphere sheet-intersecting radius = 33.60195275480589 [A]
+
+-------
+ Misc.
+-------
+
+Program wall time = (hh:mm:ss) 02:08:56
+

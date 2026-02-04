@@ -1,0 +1,60 @@
+# LAMMPS script for running NVT simulation
+
+units       metal                   # Energies in eV, distances in A
+dimension   3
+boundary    p p p
+atom_style  full
+
+bond_style   zero
+angle_style  zero
+pair_style   lj/cut/coul/long 9.0
+kspace_style pppm 1.0e-5
+read_data    ../equi_final.lammps-data
+
+pair_coeff   1 1 0.0      1.0        # Ignore C-C
+pair_coeff   1 2 0.0      1.0        # Ignore C-H
+pair_coeff   1 3 0.004551 3.367      # LJ for C-O (0.4391 kJ/mol = 0.004551 eV)
+pair_coeff   2 2 0.0      1.0        # SPC/E H-H
+pair_coeff   2 3 0.0      1.0        # SPC/E H-O
+pair_coeff   3 3 0.006735 3.166      # SPC/E O-O (0.1553 kcal/mol = 0.006735 eV)
+
+set type 2 charge 0.4238            # SPC/E H
+set type 3 charge -0.8476           # SPC/E O
+
+variable t equal step
+
+group graphene type 1
+group H2O type 2 3
+
+######### NVT production for 10 ns #############
+
+thermo 10000
+dump DUMP0 all atom 100 nvt_prod_0.lammpstrj
+timestep 0.001
+fix rigid_bonds H2O shake 0.0001 10 10000 b 1 a 1
+fix NVT1 H2O nvt temp 300 300 $(100.0*dt)
+run 2000000
+undump DUMP0
+write_restart nvt_prod.restart.*
+
+dump DUMP1 all atom 100 nvt_prod_1.lammpstrj
+run 2000000
+undump DUMP1
+write_restart nvt_prod.restart.*
+
+dump DUMP2 all atom 100 nvt_prod_2.lammpstrj
+run 2000000
+undump DUMP2
+write_restart nvt_prod.restart.*
+
+dump DUMP3 all atom 100 nvt_prod_3.lammpstrj
+run 2000000
+undump DUMP3
+write_restart nvt_prod.restart.*
+
+dump DUMP4 all atom 100 nvt_prod_4.lammpstrj
+run 2000000
+undump DUMP4
+write_restart nvt_prod.restart.*
+write_data nvt_prod_final.lammps-data pair ij
+

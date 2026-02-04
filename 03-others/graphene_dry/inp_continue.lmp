@@ -1,0 +1,22 @@
+# LAMMPS script for continuing NVT simulation
+
+atom_modify map yes
+newton      on
+
+read_restart nvt_prod.restart.100000
+
+pair_style  symmetrix/mace
+pair_coeff  * * ../../../00-common/models/ch2o-dens-inv_swa-1-6-8.json C
+
+thermo 1000
+
+######### NVT production for 200 ps #############
+
+dump DUMP1 all atom 100 nvt_prod_1.lammpstrj
+timestep 0.001
+fix NVT1 all nvt temp 300 300 0.1
+run 200000
+
+write_restart nvt_prod.restart.*
+write_data nvt_prod_final.lammps-data
+

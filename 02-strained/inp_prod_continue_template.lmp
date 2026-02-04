@@ -1,0 +1,26 @@
+# LAMMPS script for continuing NVT simulation
+
+atom_modify map yes
+newton      on
+
+read_restart nvt_prod.restart.RESTART_NUM
+
+pair_style  symmetrix/mace
+pair_coeff  * * ../../../00-common/models/ch2o-dens-inv_swa-1-6-8.json C H O
+
+group graphene type 1
+group H2O type 2 3
+
+thermo 1000
+
+######### NVT production for 80 ps #############
+
+dump DUMP1 all atom 100 nvt_prod_RUN_NUM.lammpstrj
+timestep 0.001
+fix NVT1 graphene nvt temp 300 300 0.1
+fix NVT2 H2O nvt temp 300 300 0.1
+run 80000
+
+write_restart nvt_prod.restart.*
+write_data nvt_prod_final.lammps-data
+

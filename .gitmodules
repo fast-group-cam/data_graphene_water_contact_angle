@@ -1,0 +1,4 @@
+[submodule "00-common/software/contact-angle"]
+	path = 00-common/software/contact-angle
+	url = https://github.com/fast-group-cam/contact-angle.git
+	branch = v0.3.0

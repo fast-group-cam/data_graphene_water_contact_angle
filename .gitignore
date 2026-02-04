@@ -1,0 +1,32 @@
+###########################################
+# Virtual environments and other software #
+###########################################
+
+00-common/software/venv/*
+!00-common/software/venv/README.txt
+
+00-common/software/lammps/*
+!00-common/software/lammps/README.txt
+
+########################
+# Raw trajectory files #
+########################
+
+*/*/*/*.lammpstrj
+*/*/*/*traj.xyz
+*/*/*/*/*.lammpstrj
+*/*/*/*/*traj.xyz
+
+
+################
+# Large models #
+################
+
+Project/00-common/models/*.json
+
+
+##############
+# SLURM logs #
+##############
+
+*slurm-*.out

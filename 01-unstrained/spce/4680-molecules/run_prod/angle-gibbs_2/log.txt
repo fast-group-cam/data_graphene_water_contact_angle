@@ -1,0 +1,25 @@
+---------
+ General
+---------
+
+No. of frames = 20001
+No. of water molecules = 4680
+
+Droplet roof = 39.26950284134387 [A]
+Droplet floor = 1.94198991472725 [A]
+
+------------------------
+ Gibbs dividing surface
+------------------------
+
+Best-fit sphere z-height = -5.133897157241451 [A]
+Best-fit sphere radius = 44.36904284047391 [A]
+Best-fit sphere contact angle = 83.35547978583143 [deg]
+Best-fit sphere sheet-intersecting radius = 44.071022935242574 [A]
+
+-------
+ Misc.
+-------
+
+Program wall time = 29mins49s
+

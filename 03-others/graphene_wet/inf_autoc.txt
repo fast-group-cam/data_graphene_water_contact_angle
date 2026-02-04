@@ -1,0 +1,4 @@
+Long-time inclination correlation:
+Mean = 0.7907853436067241
+Std. Dev. = 0.007802952818877247
+Uncertainty = 6.502686474042561e-05

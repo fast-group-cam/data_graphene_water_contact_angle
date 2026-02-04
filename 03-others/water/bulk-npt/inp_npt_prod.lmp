@@ -1,0 +1,30 @@
+# LAMMPS script for running NpT simulation
+
+units       metal
+dimension   3
+boundary    p p p
+atom_style  full
+atom_modify map yes
+
+newton      on
+
+read_data   ../equi_final.lammps-data
+
+pair_style  symmetrix/mace
+pair_coeff  * * ../../../../00-common/models/ch2o-dens-inv_swa-1-6-8.json H O
+
+variable t equal step
+
+######### NVT production for 1 ns #############
+
+dump DUMP1 all atom 1000 npt_prod_snapshots.lammpstrj
+timestep 0.001
+fix NPT1 all npt temp 300 300 0.1 iso 1.01325 1.01325 1.0
+thermo_style custom step temp epair etotal lx ly lz press pxx pyy pzz
+thermo_modify line yaml
+thermo 100
+log npt_prod_log.lammps
+run 1000000
+
+write_data npt_prod_final.lammps-data
+
